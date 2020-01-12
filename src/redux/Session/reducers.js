@@ -10,8 +10,8 @@ import {
   } from './actionTypes';
 
 const initialState = {
-    isLoggingIn: false,
-    isLoggedOut: false,
+    isSigningIn: false,
+    isSigningOut: false,
     isVerifying: false,
     isAuthenticated: false,
     user: {},
@@ -23,38 +23,38 @@ const sessionReducer = (state = initialState, action) => {
         case SIGN_IN_BEGIN:
             return{
                 ...state,
-                isLoggingIn: true,
+                isSigningIn: true,
             };
         case SIGN_IN_SUCCESS:
             return{
                 ...state,
-                isLoggingIn: false,
+                isSigningIn: false,
                 isAuthenticated: true,
                 user: action.payload.user
             };
         case SIGN_IN_FAILURE:
             return{
                 ...state,
-                isLoggingIn: false,
+                isSigningIn: false,
                 isAuthenticated: true,
                 error: action.payload.error
             };
         case SIGN_OUT_BEGIN:
             return{
                 ...state,
-                isLoggingOut: true,
+                isSigningOut: true,
             };
         case SIGN_OUT_SUCCESS:
             return{
                 ...state,
-                isLoggingOut: false,
+                isSigningOut: false,
                 isAuthenticated: false,
                 user: {}
             };
         case SIGN_OUT_FAILURE:
             return{
                 ...state,
-                isLoggingOut: false,
+                isSigningOut: false,
                 error: action.payload.error
             };
         case VERIFY_USER_BEGIN:
