@@ -1,4 +1,4 @@
-import signIn from './actions';
-import signInReducer from './reducers';
+import { signIn, signOut, verifyUser } from './actions';
+import { sessionReducer } from './reducers';
 
-export { signIn, signInReducer };
+export { signIn, signOut, verifyUser, sessionReducer };
