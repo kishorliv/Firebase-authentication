@@ -1,3 +1,4 @@
+import signIn from './actions';
 import signInReducer from './reducers';
 
-export { signInReducer };
+export { signIn, signInReducer };
