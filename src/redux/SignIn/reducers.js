@@ -6,7 +6,6 @@ import {
 
 const initialState = {
     isLoggingIn: false,
-    isVerifying: false,
     isAuthenticated: false,
     user: {},
     error: {}
