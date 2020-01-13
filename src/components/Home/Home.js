@@ -1,12 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-
-
 import { signOut } from '../../redux/Session';
-import { firebaseObj } from '../../firebase';
-import * as ROUTES from '../../constants/routes';
 
 
 class HomeBase extends React.Component {
