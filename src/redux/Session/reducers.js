@@ -36,7 +36,7 @@ const sessionReducer = (state = initialState, action) => {
             return{
                 ...state,
                 isSigningIn: false,
-                isAuthenticated: true,
+                isAuthenticated: false,
                 error: action.payload.error
             };
         case SIGN_OUT_BEGIN:
@@ -49,7 +49,8 @@ const sessionReducer = (state = initialState, action) => {
                 ...state,
                 isSigningOut: false,
                 isAuthenticated: false,
-                user: {}
+                user: {},
+                error: {}
             };
         case SIGN_OUT_FAILURE:
             return{
