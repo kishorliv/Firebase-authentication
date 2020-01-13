@@ -52,9 +52,10 @@ const signIn = (email, password) => {
     dispatch(signInBegin());
 
     firebaseObj
+    .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(() => {
-      dispatch(signInSuccess(email, password));
+    .then((user) => {
+      dispatch(signInSuccess(user));
     })
     .catch(error => {
       dispatch(signInFailure(error));
@@ -67,6 +68,7 @@ const signOut = () => {
     dispatch(signOutBegin());
 
     firebaseObj
+    .auth()
     .signOut()
     .then(() => {
       dispatch(signOutSuccess());
