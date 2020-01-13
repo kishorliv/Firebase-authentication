@@ -1,0 +1,70 @@
+form {
+  margin-top: 100px;
+}
+
+b{
+  font-weight: 400;
+}
+
+p.errorMsg{
+  color: red;
+  text-align: center;
+}
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #201e1e;
+  color: #ffffff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px auto;
+  width: 70px;
+  height: 70px;
+}
+
+img.avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 280px;
+}
+
+.container-error {
+  margin: 0 auto;
+  width: 100%;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
