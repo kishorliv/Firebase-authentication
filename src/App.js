@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
+import { ProtectedRoute } from './shared/components/ProtectedRoute';
+import { Home } from './components/Home';
+import { SignIn } from './components/SignIn';
+import * as ROUTES from './constants/routes';
+
+function App(props) {
+  const { isAuthenticated, isVerifying } = props;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <ProtectedRoute
+        exact
+        path={ROUTES.HOME}
+        component={Home}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <Route path={ROUTES.SIGN_IN} component={SignIn} />
+    </Switch>
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: state.session.isAuthenticated,
+    isVerifying: state.session.isVerifying
+  };
+}
+
+export default connect(mapStateToProps)(App);
