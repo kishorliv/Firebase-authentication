@@ -10,4 +10,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
-export const firebaseObj = firebase.initializeApp(firebaseConfig);
+const firebaseObj = firebase.initializeApp(firebaseConfig);
+
+export { firebaseObj };
